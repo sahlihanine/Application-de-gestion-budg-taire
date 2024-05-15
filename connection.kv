@@ -1,0 +1,73 @@
+<Connectionscreen>:
+
+    RelativeLayout:
+        size_hint_y: 1
+        height: '100dp'  # Taille de l'image
+
+        AsyncImage:
+            source: r"C:/Users/hanine/Desktop/travails/icones/icone code/retour2.png"
+            size_hint:None , None
+            size: 60,60
+            pos_hint: {'top': 1, 'left': 0.9}
+            on_touch_down: if self.collide_point(*args[1].pos): root.manager.transition.direction = 'right'; root.manager.current = 'Home';app.root.get_screen('Settings').play_sound()
+
+
+    FloatLayout:
+
+        Label:
+            text: 'Adresse email'
+            color: 0.345, 0.635, 0.42, 1   # Vert
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'x': .29, 'top': .639}
+            font_size: 20  # Changer la taille du texte
+
+        TextInput:
+            id: email_input
+            text:""
+            multiline : False
+            size_hint: (0.24, 0.046)
+            pos_hint: {'x': .49, 'y': .6}
+
+        Label:
+            text: 'Mot de passe'
+            color: 0.345, 0.635, 0.42, 1   # Vert
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'x': .29, 'top': .439}
+            font_size: 20  # Changer la taille du texte
+
+        TextInput:
+            id: password_input
+            text:""
+            password: True  # Active le masquage du mot de passe
+            multiline : False
+            size_hint: (0.24, 0.046)
+            pos_hint: {'x': .49, 'y': .4}
+
+        # Affichage du message d'erreur
+        Label:
+            id: error_label
+            text: ""
+            color: 1, 0, 0, 1  # Rouge
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'x': .29, 'top': .35}
+            font_size: 20  # Changer la taille du texte
+
+        AsyncImage:
+            source: r"C:/Users/hanine/Desktop/travails/icones/icone code/eye.png"
+            size_hint:None , None
+            size: 23,23
+            pos_hint: {'right': 0.727, 'center_y': 0.422}
+            on_touch_down: if self.collide_point(*args[1].pos): root.toggle_password_visibility();app.root.get_screen('Settings').play_sound()
+
+        Button:
+            text: 'Se connecter'
+            size_hint: (0.2, 0.1)
+            pos_hint: {'center_x': 0.5, 'center_y': 0.2}  # Pour centrer le bouton
+            background_color: (0.345, 0.635, 0.42, 1)
+            background_normal: ''
+            on_press:
+                app.root.get_screen('Settings').play_sound()
+                root.on_login()

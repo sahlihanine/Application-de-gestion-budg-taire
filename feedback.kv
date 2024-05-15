@@ -1,0 +1,53 @@
+<FeedbackScreen>:
+
+    RelativeLayout:
+        size_hint_y: 1
+        height: '100dp'  # Taille de l'image
+
+        AsyncImage:
+            source: r"C:/Users/hanine/Desktop/travails/icones/icone code/retour2.png"
+            size_hint:None , None
+            size: 60,60
+            pos_hint: {'top': 1, 'left': 0.9}
+            on_touch_down: if self.collide_point(*args[1].pos): root.manager.transition.direction = 'right'; root.manager.current = 'Menu';app.root.get_screen('Settings').play_sound()
+
+        Label:
+            text: "Feedback"
+            font_size: '25sp'
+            color: (0.345, 0.635, 0.42, 1)
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'center_x': 0.5, 'top': 0.95}
+
+    FloatLayout:
+        id: float_layout
+
+        # Affichage du message d'erreur
+        Label:
+            id: error_label
+            text: ""
+            color: 1, 0, 0, 1  # Rouge
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'x': .25, 'top': .34}
+
+        Label:
+            text: "Entrez votre feedback :"
+
+        TextInput:
+            id: feedback_input
+            hint_text: "entrer votre feedback"
+            multiline: True
+            size_hint: (0.5, 0.4)
+            pos_hint: {'x': .25, 'y': .35}
+
+
+        Button:
+            text: "Soumettre le feedback"
+            size_hint: (0.25, 0.1)
+            pos_hint: {'x': 0.37, 'y': 0.17}
+            background_color: (0.345, 0.635, 0.42, 1)
+            background_normal: ''
+            on_release:
+                app.root.get_screen('Settings').play_sound()
+                root.submit_feedback()

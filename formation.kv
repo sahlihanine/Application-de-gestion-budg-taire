@@ -1,0 +1,51 @@
+<FormationScreen>:
+
+    RelativeLayout:
+        Label:
+            text: "Copier le lien et profiter d'une formation gratuite"
+            font_size: '25sp'
+            color: (0.345, 0.635, 0.42, 1)
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'center_x': 0.5, 'top': 0.95}
+
+        GridLayout:
+            cols: 2
+            rows: 3
+
+            Label:
+                text: "               Créer un budget personnel sur Excel :\n\n''''''https://youtu.be/fWixMhR--_k?si=bnSkWxdGcJ-JkmjP''''''"
+                color: (0, 0, 0, 1)
+
+            Label:
+                text: "                                La règle de 500-30-20 :\n\n''''''https://youtu.be/qTNH0ndlINc?si=aFLsdQcKsWX0nlnp''''''"
+                color: (0, 0, 0, 1)
+
+            Label:
+                text: "            Comment gérer efficacement son budget :\n\n''''''https://youtu.be/Ez1l9a4E4ys?si=Y0ATY9UekeFScRmJ''''''"
+                color: (0, 0, 0, 1)
+
+            Label:
+                text: "   4 livres pour comprendre le monde de la finance :\n\n''''''https://cartefinancement.com/litterature-et-finance/''''''"
+                color: (0, 0, 0, 1)
+
+            Label:
+                text: "                                Investir en bourse :\n\n''''''https://youtu.be/6StPxejOdCc?si=ajnHEI77gRUYv5bD''''''"
+                color: (0, 0, 0, 1)
+
+            Label:
+                text: "                Investir en bourse avec un petit budget :\n\n''''''https://youtu.be/TeWReENzRJQ?si=3cff691hNdc2i60O''''''"
+                color: (0, 0, 0, 1)
+
+
+    RelativeLayout:
+        size_hint_y: 1
+        height: '100dp'
+
+
+        AsyncImage:
+            source: r"C:/Users/hanine/Desktop/travails/icones/icone code/retour2.png"
+            size_hint: None, None
+            size: 60,60
+            pos_hint: {'top': 1, 'left': 0.9}
+            on_touch_down: if self.collide_point(*args[1].pos): root.manager.transition.direction = 'right'; root.manager.current = 'Menu';app.root.get_screen('Settings').play_sound()

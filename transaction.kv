@@ -1,0 +1,35 @@
+<TransactionScreen>:
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: ['50dp', '0dp', '0dp', '0dp']
+        Widget:
+            size_hint_y: None
+            height: '80dp'
+
+        ScrollView:
+            GridLayout:
+                id: transactions_list
+                cols: 1
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: 20
+
+    RelativeLayout:
+        size_hint_y: 1
+        height: '100dp'  # Taille de l'image
+
+        AsyncImage:
+            source: r"C:/Users/hanine/Desktop/travails/icones/icone code/retour2.png"
+            size_hint:None , None
+            size: 60,60
+            pos_hint: {'top': 1, 'left': 0.9}
+            on_touch_down: if self.collide_point(*args[1].pos): root.manager.transition.direction = 'right'; root.manager.current = 'Menu';app.root.get_screen('Settings').play_sound()
+
+        Label:
+            text: "Transaction"
+            font_size: '25sp'
+            color: (0.345, 0.635, 0.42, 1)
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'center_x': 0.5, 'top': 0.95}

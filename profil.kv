@@ -1,0 +1,129 @@
+<ProfilScreen>:
+
+    RelativeLayout:
+        size_hint_y: 1
+        height: '100dp'  # Taille de l'image
+
+        AsyncImage:
+            source: r"C:/Users/hanine/Desktop/travails/icones/icone code/profil.png"
+            size_hint:None , None
+            size: 180,180
+            pos_hint: {'top': 1, 'center_x': 0.5, 'top': 0.98}
+
+        AsyncImage:
+            source: r"C:/Users/hanine/Desktop/travails/icones/icone code/retour2.png"
+            size_hint:None , None
+            size: 60,60
+            pos_hint: {'top': 1, 'left': 0.9}
+            on_touch_down: if self.collide_point(*args[1].pos): root.manager.transition.direction = 'right'; root.manager.current = 'Menu';app.root.get_screen('Settings').play_sound()
+
+    FloatLayout:
+        id: float_layout
+
+        Label:
+            text: 'Nom utilisateur'
+            color: 0.345, 0.635, 0.42, 1
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'x': .29, 'top': .65}
+            font_size: 20  # Changer la taille du texte
+
+        TextInput:
+            id: username_input
+            text: ""
+            multiline: False
+            size_hint: (0.24, 0.046)
+            pos_hint: {'x': .5, 'y': .61}
+
+        Label:
+            text: '@Mail'
+            color: 0.345, 0.635, 0.42, 1
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'x': .29, 'top': .57}
+            font_size: 20  # Changer la taille du texte
+
+        TextInput:
+            id: email_input
+            text: ""
+            multiline: False
+            size_hint: (0.24, 0.046)
+            pos_hint: {'x': .5, 'y': .534}
+
+        Label:
+            text: 'salaire'
+            color: 0.345, 0.635, 0.42, 1
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'x': .29, 'top': .49}
+            font_size: 20  # Changer la taille du texte
+
+        TextInput:
+            id: salaire_input
+            text: ""
+            multiline: False
+            size_hint: (0.24, 0.046)
+            pos_hint: {'x': .5, 'y': .456}
+
+        Label:
+            text: 'dépences fixes'
+            color: 0.345, 0.635, 0.32, 1
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'x': .29, 'top': .41}
+            font_size: 20  # Changer la taille du texte
+
+        TextInput:
+            id: dépences_fixes_input
+            text: ""
+            multiline: False
+            size_hint: (0.24, 0.046)
+            pos_hint: {'x': .5, 'y': .375}
+
+        Label:
+            text: 'Mot de passe'
+            color: 0.345, 0.635, 0.42, 1
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'x': .29, 'top': .33}
+            font_size: 20  # Changer la taille du texte
+
+        TextInput:
+            id: password_input
+            hint_text: "Nouvelle mot de passe"
+            password: True  # Active le masquage du mot de passe
+            multiline: False
+            size_hint: (0.24, 0.046)
+            pos_hint: {'x': .5, 'y': .29}
+
+        # Affichage du message d'erreur
+        Label:
+            id: error_label
+            text: ""
+            color: 1, 0, 0, 1  # Rouge
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'x': .29, 'top': .24}
+            font_size: 20  # Changer la taille du texte
+
+        AsyncImage:
+            source: r"C:/Users/hanine/Desktop/travails/icones/icone code/eye.png"
+            size_hint:None , None
+            size: 23,23
+            pos_hint: {'right': 0.734, 'center_y': 0.312}
+            on_touch_down: if self.collide_point(*args[1].pos): root.toggle_password_visibility();app.root.get_screen('Settings').play_sound()
+
+        Button:
+            text: "Enregistrer les modifications"
+            size_hint: (0.25, 0.1)
+            pos_hint: {'x': 0.37, 'y': 0.08}
+            background_color: (0.345, 0.635, 0.42, 1)
+            background_normal: ''
+            on_press:
+                app.root.get_screen('Settings').play_sound()
+                root.save_changes()
+
+
+
+
+

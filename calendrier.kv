@@ -1,0 +1,25 @@
+<CalendrierScreen>:
+
+    RelativeLayout:
+
+        AsyncImage:
+            source: r"C:/Users/hanine/Desktop/travails/icones/icone code/retour2.png"
+            size_hint: None, None
+            size: 60,60
+            pos_hint: {'top': 1, 'left': 0.9}
+            on_touch_down: if self.collide_point(*args[1].pos): root.reveal_menu_buttons();root.manager.transition.direction = 'right'; root.manager.current = 'Menu';app.root.get_screen('Settings').play_sound()
+
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 10
+        spacing: 10
+
+        Label:
+            text: root.calendar_text
+            font_name: 'RobotoMono-Regular'  # Utiliser une police à espacement fixe
+            text_size: self.width, None
+            halign: 'center'
+            valign: 'middle'
+            color: (0.345, 0.635, 0.42, 1)
+            font_size: '35sp'

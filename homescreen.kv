@@ -1,0 +1,55 @@
+<Homescreen>:
+
+    RelativeLayout:
+        size_hint_y: 1
+        height: '100dp'  # Taille de l'image
+
+        Image:
+            source: r"C:/Users/hanine/Desktop/travails/icones/icone code/logo.png"
+            size_hint: (None, None)
+            size: (180, 180)  # Ajustez la taille de l'image selon vos besoins
+            pos_hint: {'top': 1, 'center_x': 0.5, 'top': 0.95}
+
+
+    BoxLayout:
+        orientation: 'horizontal'
+        spacing: '30dp'
+        padding: ['20dp', '50dp', '20dp', '20dp']
+
+        Label:
+            text: '\"budget intelligent , avenir brillant \"'
+            size_hint_x: 1
+            size_hint_y: None
+            height: '20dp'
+            font_size: '18sp'
+            color: (0, 0, 0, 1)
+            pos_hint: {"top": .75}
+
+    BoxLayout:
+        orientation: 'horizontal'
+        spacing: '30dp'
+        padding: ['20dp', 0,'20dp', 0]
+
+        Button:
+            text: 'INSCRIRE'
+            size_hint_x: 0.1
+            size_hint_y: 0
+            pos_hint: {"y":.1}
+            background_color: (0.345, 0.635, 0.42, 1)
+            background_normal: ''
+            on_press:
+                app.root.get_screen('Settings').play_sound()
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'Incription'
+
+        Button:
+            text: 'CONNECTER'
+            size_hint_x: 0.1
+            size_hint_y: 0
+            pos_hint: {"y":.1}
+            background_color: (0.345, 0.635, 0.42, 1)
+            background_normal: ''
+            on_press:
+                app.root.get_screen('Settings').play_sound()
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'Connection'

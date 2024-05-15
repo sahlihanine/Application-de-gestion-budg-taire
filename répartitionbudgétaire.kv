@@ -1,0 +1,102 @@
+<RépartitionBudgétaireScreen>:
+
+    RelativeLayout:
+        size_hint_y: 1
+        height: '100dp'
+
+        AsyncImage:
+            source: r"C:/Users/hanine/Desktop/travails/icones/icone code/retour2.png"
+            size_hint:None , None
+            size: 60,60
+            pos_hint: {'top': 1, 'left': 0.9}
+            on_touch_down: if self.collide_point(*args[1].pos): root.manager.transition.direction = 'right'; root.manager.current = 'Menu';app.root.get_screen('Settings').play_sound()
+
+        AsyncImage:
+            source: r"C:/Users/hanine/Desktop/travails/icones/icone code/50%30%20%.png"
+            size_hint: None, None
+            size: 800, 800
+            pos_hint: {'center_x': 0.3, 'center_y': 0.5}
+
+        AsyncImage:
+            source: r"C:/Users/hanine/Desktop/travails/icones/icone code/vert.png"
+            size_hint: None, None
+            size: 100, 100
+            pos_hint: {'center_x': 0.65, 'center_y': 0.7}
+
+        AsyncImage:
+            source: r"C:/Users/hanine/Desktop/travails/icones/icone code/beige.png"
+            size_hint: None, None
+            size: 100, 100
+            pos_hint: {'center_x': 0.65, 'center_y': 0.5}
+
+        AsyncImage:
+            source: r"C:/Users/hanine/Desktop/travails/icones/icone code/rose.png"
+            size_hint: None, None
+            size: 100, 100
+            pos_hint: {'center_x': 0.65, 'center_y': 0.3}
+
+        Label:
+            text: "Répartiton budgétaire"
+            font_size: '25sp'
+            color: (0.345, 0.635, 0.42, 1)
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'center_x': 0.5, 'top': 0.95}
+
+
+
+    FloatLayout:
+
+        Label:
+            id: dépences_primaires_label
+            text: 'Dépences_primaires : '
+            color: 0, 0, 0, 1
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'x': .68, 'top': .715}
+
+        Label:
+            id: dépences_primaires_value_label
+            text: ''
+            color: 0, 0, 0, 1
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'x': .88, 'top': .717}
+            font_size: 20
+
+        Label:
+            id: dépences_secondaires_label
+            text: 'Dépences_secondaires : '
+            color: 0, 0, 0, 1
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'x': .7, 'top': .515}
+
+        Label:
+            id: dépences_secondaires_value_label
+            text: ''
+            color: 0, 0, 0, 1
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'x': .92, 'top': .515}
+
+        Label:
+            id: Investissement_label
+            text: 'Investissement : '
+            color: 0, 0, 0, 1
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'x': .7, 'top': .315}
+        Label:
+            id: Investissement_value_label
+            text: ''
+            color: 0, 0, 0, 1
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'x': .84, 'top': .315}
+
+
+
+
+
+

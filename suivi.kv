@@ -1,0 +1,65 @@
+<SuiviScreen>:
+
+    BoxLayout:
+        orientation: 'vertical'
+
+        Widget:
+            height: (self.parent.height - 450) / 2
+
+        ProgressBar:
+            id: dépenses_nécessaires_progress
+            size_hint: (None, None)
+            size: (800, 200)
+            pos_hint: {'center_x': 0.5}
+
+
+        Label:
+            id: dépenses_nécessaires_label
+            size_hint: None, None
+            size: self.texture_size
+            height: '20dp'
+            font_size: '20sp'
+            color: (0.345, 0.635, 0.42, 1)
+            pos_hint: {"right": 0.75, "top": 0.7}
+
+
+        ProgressBar:
+            id: épargne_progress
+            size_hint: (None, None)
+            size: (800, 200)
+            pos_hint: {'center_x': 0.5}
+
+        Label:
+            id: épargne_label
+            size_hint_x: None
+            size_hint_y: None
+            size: self.texture_size
+            height: '20dp'
+            font_size: '20sp'
+            color: (0.345, 0.635, 0.42, 1)
+            pos_hint: {"right": 0.75, "center_y": 0.5}
+
+        Widget:
+            size_hint_y: None
+            height: (self.parent.height - 400) / 2
+
+
+    RelativeLayout:
+        size_hint_y: 1
+        height: '100dp'
+
+        AsyncImage:
+            source: r"C:/Users/hanine/Desktop/travails/icones/icone code/retour2.png"
+            size_hint: None, None
+            size: 60, 60
+            pos_hint: {'top': 1, 'left': 0.9}
+            on_touch_down: if self.collide_point(*args[1].pos): root.manager.transition.direction = 'right'; root.manager.current = 'Menu'; app.root.get_screen('Settings').play_sound()
+
+        Label:
+            text: "Suivre votre progrès"
+            font_size: '25sp'
+            color: (0.345, 0.635, 0.42, 1)
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'center_x': 0.5, 'top': 0.95}
+

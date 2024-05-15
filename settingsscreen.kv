@@ -1,0 +1,54 @@
+<SettingsScreen>:
+
+    FloatLayout:
+
+        Label:
+            text: 'Effet sonore'
+            color: (0, 0.5, 0, 1)  # Vert
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'x': .3, 'top': .58}
+
+        Label:
+            text: 'Mode sombre'
+            color: (0, 0.5, 0, 1)  # Vert
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'x': .3, 'top': 0.42}
+
+
+
+        Switch:
+            size_hint: None, None
+            size: "100dp", "40dp"
+            pos_hint: {'right': .7, 'top': 0.6}
+            active: True
+            on_active:
+                root.toggle_sound()
+                root.play_sound()
+
+
+        Switch:
+            size_hint: None, None
+            size: "100dp", "40dp"
+            pos_hint: {'right': .7, 'top': 0.45}
+            active: False
+            on_active:
+                root.toggle_dark_mode(self.active)
+                root.play_sound()
+
+
+
+
+    RelativeLayout:
+        size_hint_y: 1
+        height: '100dp'  # Taille de l'image
+
+        AsyncImage:
+            source: r"C:/Users/hanine/Desktop/travails/icones/icone code/retour2.png"
+            size_hint:None , None
+            size: 60,60
+            pos_hint: {'top': 1, 'left': 0.9}
+            on_touch_down:if self.collide_point(*args[1].pos): root.reveal_menu_buttons();root.manager.transition.direction = 'right'; root.manager.current = 'Menu';root.play_sound();
+
+

@@ -1,0 +1,180 @@
+<MenuScreen>:
+
+    BoxLayout:
+        orientation: 'horizontal'
+        spacing: '30dp'
+        padding: ['20dp', '50dp', '20dp', '20dp']
+
+        Label:
+            text: 'Profil'
+            size_hint_x: 1
+            size_hint_y: None
+            height: '20dp'
+            font_size: '30sp'
+            color: (0.345, 0.635, 0.42, 1)
+            pos_hint: {"top": 0.77}
+
+    BoxLayout:
+        id: dropdown_box
+        pos_hint: {'top': 1.07, 'right':1}
+        size_hint: None, None
+        width: '100dp'
+        height: '150dp'
+
+        AsyncImage:
+            source: "C:/Users/hanine/Desktop/travails/icones/icone code/menu.png"
+            size_hint: None, None
+            size: '100dp', '48dp'
+            pos_hint: {"top": 0.7, "right":1}
+            on_touch_down:if self.collide_point(*args[1].pos): dropdown.open(self);dropdown_box.opacity = 1;app.root.get_screen('Settings').play_sound()
+
+        DropDown:
+            id: dropdown
+            size_hint: None, None
+            width: '100dp'
+
+            Button:
+                id:settings_button
+                text: 'Paramètre'
+                size_hint_y: None
+                height: '48dp'
+                background_color: (0.345, 0.635, 0.42, 1)
+                background_normal: ''
+                on_press:
+                    root.manager.transition.direction = 'left'
+                    root.manager.current = 'Settings'
+                    app.root.get_screen('Settings').play_sound()
+                    root.hide_buttons()
+
+            Button:
+                id:calendar_button
+                text: 'Calendrier'
+                size_hint_y: None
+                height: '48dp'
+                background_color: (0.345, 0.635, 0.42, 1)
+                background_normal: ''
+                on_press:
+                    root.manager.transition.direction = 'left'
+                    root.manager.current = 'Calendrier'
+                    root.hide_buttons()
+
+
+            Button:
+                id:help_button
+                text: 'Aide'
+                size_hint_y: None
+                height: '48dp'
+                background_color: (0.345, 0.635, 0.42, 1)
+                background_normal: ''
+
+
+    BoxLayout:
+        spacing: '8dp'
+        padding: ['40dp', '200dp', '40dp', '50dp']
+        orientation: 'horizontal'
+
+        Button:
+            text: 'Répartition budgétaire'
+            size_hint_y: 0.2
+            size_hint_x: 0.5
+            pos_hint: {"x": .0, "center_y": 0.7}
+            background_color: (0.345, 0.635, 0.42, 1)
+            background_normal: ''
+            on_press:
+                app.root.get_screen('Settings').play_sound()
+                app.root.get_screen('RépartitionBudgétaire').calculate_and_update_budget_allocation()
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'RépartitionBudgétaire'
+
+        Button:
+            text: 'Saisie de transactions'
+            size_hint_y: 0.2
+            size_hint_x: 0.5
+            pos_hint: {"x": .5, "center_y": 0.7}
+            background_color: (0.345, 0.635, 0.42, 1)
+            background_normal: ''
+            on_press:
+                app.root.get_screen('Settings').play_sound()
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'Dépences_courantes'
+
+    BoxLayout:
+        spacing: '8dp'
+        padding: ['40dp', '200dp', '40dp', '50dp']
+        orientation: 'horizontal'
+
+        Button:
+            text: 'Historique de transactions'
+            size_hint_y: 0.2
+            size_hint_x: 0.5
+            pos_hint: {"x": .26, "center_y": 0.4}
+            background_color: (0.345, 0.635, 0.42, 1)
+            background_normal: ''
+            on_press:
+                app.root.get_screen('Settings').play_sound()
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'Transaction'
+                app.root.get_screen('Transaction').load_transactions()
+
+        Button:
+            text: 'Feedback'
+            size_hint_y: 0.2
+            size_hint_x: 0.5
+            pos_hint: {"x": .26, "center_y": 0.4}
+            background_color: (0.345, 0.635, 0.42, 1)
+            background_normal: ''
+            on_press:
+                app.root.get_screen('Settings').play_sound()
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'Feedback'
+
+    BoxLayout:
+        spacing: '8dp'
+        padding: ['40dp', '200dp', '40dp', '50dp']
+        orientation: 'horizontal'
+
+        Button:
+            text: 'Suivi du progrés'
+            size_hint_y: 0.2
+            size_hint_x: 0.5
+            pos_hint: {"x": .26, "center_y": 0.1}
+            background_color: (0.345, 0.635, 0.42, 1)
+            background_normal: ''
+            on_press:
+                app.root.get_screen('Settings').play_sound()
+                root.manager.transition.direction = 'left'
+                app.root.get_screen('Suivi').calcule_sommes()
+                root.manager.current = 'Suivi'
+
+
+        Button:
+            text: 'Formations gratuites'
+            size_hint_y: 0.2
+            size_hint_x: 0.5
+            pos_hint: {"x": .26, "center_y": 0.1}
+            background_color: (0.345, 0.635, 0.42, 1)
+            background_normal: ''
+            on_press:
+                app.root.get_screen('Settings').play_sound()
+                root.manager.transition.direction = 'left'
+                root.manager.current = 'Formation'
+
+
+    RelativeLayout:
+        size_hint_y: 1
+        height: '100dp'
+
+
+        AsyncImage:
+            source: r"C:/Users/hanine/Desktop/travails/icones/icone code/retour2.png"
+            size_hint: None, None
+            size: 60,60
+            pos_hint: {'top': 1, 'left': 0.9}
+            on_touch_down: if self.collide_point(*args[1].pos): root.manager.transition.direction = 'right'; root.manager.current = 'Home';app.root.get_screen('Settings').play_sound()
+
+        AsyncImage:
+            source: r"C:/Users/hanine/Desktop/travails/icones/icone code/profil.png"
+            size_hint: None, None
+            size: 180,180
+            pos_hint: {'top': 1, 'center_x': 0.5, 'top': 0.95}
+            on_touch_down: if self.collide_point(*args[1].pos): root.manager.transition.direction = 'right'; root.manager.current = 'Profil';app.root.get_screen('Settings').play_sound()

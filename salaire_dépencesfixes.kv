@@ -1,0 +1,65 @@
+<SalaireDépencesFixesScreen>:
+
+    RelativeLayout:
+        size_hint_y: 1
+        height: '100dp'  # Taille de l'image
+
+        AsyncImage:
+            source: r"C:/Users/hanine/Desktop/travails/icones/icone code/retour2.png"
+            size_hint:None , None
+            size: 60,60
+            pos_hint: {'top': 1, 'left': 0.9}
+            on_touch_down: if self.collide_point(*args[1].pos): root.manager.transition.direction = 'right'; root.manager.current = 'Home';app.root.get_screen('Settings').play_sound()
+
+    FloatLayout:
+        id: float_layout
+
+        Label:
+            text: 'salaire'
+            color: 0.345, 0.635, 0.42, 1
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'x': .3, 'top': .63}
+            font_size: 20  # Changer la taille du texte
+
+        TextInput:
+            id: salaire_input
+            hint_text: "entrez votre salaire"
+            multiline: False
+            size_hint: (0.24, 0.046)
+            pos_hint: {'x': .5, 'y': .59}
+
+        Label:
+            text: 'dépences fixes'
+            color: 0.345, 0.635, 0.42, 1
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'x': .3, 'top': .52}
+            font_size: 20  # Changer la taille du texte
+
+        TextInput:
+            id: dépences_fixes_input
+            hint_text: "entrez vos dépences fixes"
+            multiline: False
+            size_hint: (0.24, 0.046)
+            pos_hint: {'x': .5, 'y': .48}
+
+        # Affichage du message d'erreur
+        Label:
+            id: error_label
+            text: ""
+            color: 1, 0, 0, 1  # Rouge
+            size_hint: None, None
+            size: self.texture_size
+            pos_hint: {'x': .3, 'top': .35}
+            font_size: 20  # Changer la taille du texte
+
+        Button:
+            text: "Confirmé?"
+            size_hint: (0.25, 0.1)
+            pos_hint: {'x': 0.39, 'y': 0.16}
+            background_color: (0.345, 0.635, 0.42, 1)
+            background_normal: ''
+            on_release:
+                app.root.get_screen('Settings').play_sound()
+                root.save_data()
