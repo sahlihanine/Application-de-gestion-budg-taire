@@ -1,13 +1,31 @@
-Application de Gestion Budgétaire pour les Citoyens Tunisiens
+# 💰 Application de Gestion Budgétaire pour les Citoyens Tunisiens  
 
+## 📌 Description  
+Cette application aide les citoyens tunisiens à **gérer efficacement leur budget** en proposant des outils intuitifs et adaptés à leurs besoins. Elle intègre l’**allocation budgétaire 20-30-50**, un **suivi des transactions**, ainsi que des **conseils et ressources éducatives** pour une meilleure gestion financière.  
 
+## 🚀 Fonctionnalités principales  
+### 🔐 Authentification sécurisée  
+- Accès protégé aux outils et données financières des utilisateurs.  
 
-Cette application est conçue pour aider les citoyens tunisiens à gérer leurs budgets de manière efficace. Elle comprend des fonctionnalités adaptées aux besoins spécifiques des utilisateurs tunisiens, tels que l'authentification, l'allocation budgétaire selon la méthode 20-30-50, l'enregistrement et l'historique des transactions, des mécanismes de feedback, ainsi que des conseils et des ressources éducatives pour la gestion financière.
+### 📊 Allocation budgétaire intelligente  
+- Implémente la **règle 20-30-50** pour une répartition efficace des revenus :  
+  - **20%** pour l'épargne et l'investissement.  
+  - **30%** pour les loisirs et dépenses facultatives.  
+  - **50%** pour les besoins essentiels.  
 
-Fonctionnalités : 
-1)Authentification:Les utilisateurs peuvent se connecter de manière sécurisée pour accéder à leurs outils et données budgétaires.
-2)Allocation Budgétaire:Utilise la méthode populaire de budget 20-30-50 pour diviser les revenus en catégories de besoins, de souhaits et d'épargne.
-3)Enregistrement des Transactions:Permet aux utilisateurs d'entrer leurs dépenses et leurs revenus, en maintenant un enregistrement complet des activités financières.
-4)Historique des Transactions:Fournit un historique détaillé des transactions passées, aidant à suivre les tendances de dépenses et le respect du budget.
-5)Feedback:Les utilisateurs peuvent donner leur avis sur les performances de l'application et suggérer des améliorations, contribuant ainsi au développement continu.
-6)Conseils et Éducation:Offre des conseils et des ressources éducatives sur la gestion budgétaire, la planification financière et l'amélioration des compétences en gestion de l'argent.
+### 📝 Gestion des transactions  
+- **Ajout et suivi des revenus et dépenses** en temps réel.  
+- **Catégorisation automatique** pour une meilleure visibilité financière.  
+
+### 📅 Historique des transactions  
+- Visualisation détaillée des dépenses passées.  
+- Analyse des tendances budgétaires.  
+
+### 💬 Feedback des utilisateurs  
+- Possibilité de laisser des avis et suggestions pour améliorer l’application.  
+
+### 📚 Conseils et éducation financière  
+- Accès à des **guides et ressources éducatives** sur la gestion du budget et l’épargne.  
+
+## 🎯 Objectif  
+Faciliter la **gestion financière des citoyens tunisiens** en leur offrant un outil simple, sécurisé et éducatif pour optimiser leurs dépenses et mieux planifier leur avenir économique.  
