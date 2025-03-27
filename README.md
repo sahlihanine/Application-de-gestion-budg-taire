@@ -4,7 +4,7 @@
 Cette application aide les citoyens tunisiens à **gérer efficacement leur budget** en proposant des outils intuitifs et adaptés à leurs besoins. Elle intègre l’**allocation budgétaire 20-30-50**, un **suivi des transactions**, ainsi que des **conseils et ressources éducatives** pour une meilleure gestion financière.  
 
 ## 🚀 Fonctionnalités principales  
-### 🔐 Authentification sécurisée  
+#### 🔐 Authentification sécurisée  
 - Accès protégé aux outils et données financières des utilisateurs.  
 
 ### 📊 Allocation budgétaire intelligente  
