@@ -22,7 +22,13 @@ Cette application aide les citoyens tunisiens à **gérer efficacement leur budg
 - Analyse des tendances budgétaires.  
 
 #### 💬 Feedback des utilisateurs  
-- Possibilité de laisser des avis et suggestions pour améliorer l’application.  
+- Possibilité de laisser des avis et suggestions pour améliorer l’application.
+
+### 📦 Installation  
+1. **Cloner le projet**  
+   ```bash
+   git clone https://github.com/ton-profil/nom-du-repo.git
+   cd nom-du-repo
 
 ### 📚 Conseils et éducation financière  
 - Accès à des **guides et ressources éducatives** sur la gestion du budget et l’épargne.  
